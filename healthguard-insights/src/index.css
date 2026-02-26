@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 210 20% 98%;
+    --foreground: 215 25% 27%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 215 25% 27%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 215 25% 27%;
+
+    --primary: 173 78% 26%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 210 20% 96%;
+    --secondary-foreground: 215 25% 27%;
+
+    --muted: 210 18% 95%;
+    --muted-foreground: 215 14% 46%;
+
+    --accent: 173 60% 94%;
+    --accent-foreground: 173 78% 20%;
+
+    --destructive: 347 77% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 214 20% 92%;
+    --input: 214 20% 89%;
+    --ring: 173 78% 26%;
+
+    --radius: 1rem;
+
+    /* Risk colors */
+    --risk-low: 160 84% 39%;
+    --risk-moderate: 38 92% 50%;
+    --risk-high: 347 77% 50%;
+
+    /* Sidebar */
+    --sidebar-background: 173 78% 22%;
+    --sidebar-foreground: 173 20% 90%;
+    --sidebar-primary: 0 0% 100%;
+    --sidebar-primary-foreground: 173 78% 22%;
+    --sidebar-accent: 173 60% 28%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 173 50% 30%;
+    --sidebar-ring: 173 78% 40%;
+    --sidebar-muted: 173 30% 60%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+}
+
+@layer utilities {
+  .stat-card {
+    @apply bg-card rounded-3xl shadow-xl border border-border p-6 relative overflow-hidden transition-all duration-300 hover:shadow-2xl hover:-translate-y-0.5;
+  }
+
+  .risk-badge-low {
+    @apply bg-emerald-50 text-emerald-700 border border-emerald-200;
+  }
+
+  .risk-badge-moderate {
+    @apply bg-amber-50 text-amber-700 border border-amber-200;
+  }
+
+  .risk-badge-high {
+    @apply bg-rose-50 text-rose-700 border border-rose-200;
+  }
+
+  .filter-panel {
+    @apply bg-card rounded-3xl shadow-xl border border-border p-6;
+  }
+}
